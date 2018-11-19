@@ -469,6 +469,8 @@ namespace Bartosz_Adventure
         public static void Main(string[] args)
         {
             display("`DR\\WThis is a test.");
+
+            Console.ReadLine();
         }
     }
 }
