@@ -471,7 +471,6 @@ namespace Bartosz_Adventure
             display("`DR\\WThis is a test.");
 
             Console.ReadLine();
-            // One more!!!!
         }
     }
 }
