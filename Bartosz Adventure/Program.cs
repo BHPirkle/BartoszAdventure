@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Data.Common;
 using System.Threading;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace Bartosz_Adventure
 {
@@ -468,8 +469,8 @@ namespace Bartosz_Adventure
         
         public static void Main(string[] args)
         {
-            display("`DR\\WThis is a test.");
-
+            display("`W\\BAHello.\\L9\\L9\nAre you\\L1.\\L1.\\L1. \\L1" + Environment.UserName + "?");
+            
             Console.ReadLine();
         }
     }
