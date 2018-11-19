@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Common;
 using System.Threading;
 
 namespace Bartosz_Adventure
@@ -11,38 +12,53 @@ namespace Bartosz_Adventure
             
             switch (color.ToLower())
             {
-                case "dg":
-                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                case "ba":
+                    Console.ForegroundColor = ConsoleColor.Black;
                     break;
-                case "dc":
-                    Console.ForegroundColor = ConsoleColor.DarkCyan;
-                    break;
-                case "dm":
-                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                    break;
-                case "w":
-                    Console.ForegroundColor = ConsoleColor.White;
-                    break;
-                case "g":
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    break;
-                case "y":
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    break;
-                case "dy":
-                    Console.ForegroundColor = ConsoleColor.DarkYellow;
-                    break;
-                case "b":
+                case "bu":
                     Console.ForegroundColor = ConsoleColor.Blue;
                     break;
-                case "db":
-                    Console.ForegroundColor = ConsoleColor.DarkBlue;
+                case "c":
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    break;
+                case "gy":
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    break;
+                case "gn":
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    break;
+                case "m":
+                    Console.ForegroundColor = ConsoleColor.Magenta;
                     break;
                 case "r":
                     Console.ForegroundColor = ConsoleColor.Red;
                     break;
+                case "w":
+                    Console.ForegroundColor = ConsoleColor.White;
+                    break;
+                case "y":
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    break;
+                case "db":
+                    Console.ForegroundColor = ConsoleColor.DarkBlue;
+                    break;
+                case "dc":
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    break;
+                case "dgy":
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    break;
+                case "dgn":
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    break;
+                case "dm":
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    break;
                 case "dr":
                     Console.ForegroundColor = ConsoleColor.DarkRed;
+                    break;
+                case "dy":
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
                     break;
                 default:
                     Console.ForegroundColor = ConsoleColor.White;
@@ -74,7 +90,7 @@ namespace Bartosz_Adventure
                         {
                             text[i] = '\0';
                             text[i + 1] = '\0';
-                            setColor("b");
+                            setColor("bu");
                         }
                         
                         // Red
