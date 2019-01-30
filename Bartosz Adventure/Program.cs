@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ComponentModel;
 using System.Data.Common;
 using System.Threading;
@@ -8,6 +8,14 @@ namespace Bartosz_Adventure
 {
     internal class Program
     {
+        static void clearFormatting()
+        {
+        
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+
+        }
+        
         static void textColor(string color)
         {
             // Same thing here, maybe try and loop this instead of all these switch cases?
@@ -465,13 +473,40 @@ namespace Bartosz_Adventure
                         break;
                 }
             }
+
+            clearFormatting();
         }
         
         public static void Main(string[] args)
         {
-            display("`W\\BAHello.\\L9\\L9\nAre you\\L1.\\L1.\\L1. \\L1" + Environment.UserName + "?");
-            
-            Console.ReadLine();
+            string name = Environment.UserName;
+
+            display("`W\\BAHello.\\L9\\L9\nAre you\\L1.\\L1.\\L1. \\L1" + name + "?\n");
+            display("\\Y(ENTER \"Y\" TO CONFIRM OR \"N\" TO CHANGE)\n");
+
+            if (Console.ReadLine() == "N")
+            {
+                display("`W\\BAPlease enter your preferred name:\n");
+                
+                nameInput:
+                name = Console.ReadLine();
+
+                if (name.Length < 2)
+                {
+                    display("`W\\BA\\L1.\\L1.\\L1.\\L9Really? \\L2" + name +
+                            "? \\L2Do you think I'm stupid? \\L2Enter a name with at least 2 characters.\n");
+
+                    goto nameInput;
+                }
+                else if (name.Length > 10)
+                {
+                    display("`W\\BAThank you, \\L9\n\\L1.\\L1.\\L1.\\L9\n" + name + ".\\L9\nQuite a mouthful.");
+                }
+                else
+                {
+                    display("`W\\BAThank you, \\L1" + name + ".\n");
+                }
+            }
         }
     }
 }
