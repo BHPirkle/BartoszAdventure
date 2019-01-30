@@ -480,6 +480,7 @@ namespace Bartosz_Adventure
         public static void Main(string[] args)
         {
             string name = Environment.UserName;
+            int hadShortName = 0;
 
             display("`W\\BAHello.\\L9\\L9\nAre you\\L1.\\L1.\\L1. \\L1" + name + "?\n");
             display("\\Y(ENTER \"Y\" TO CONFIRM OR \"N\" TO CHANGE)\n");
@@ -493,12 +494,31 @@ namespace Bartosz_Adventure
 
                 if (name.Length < 2)
                 {
-                    display("`W\\BA\\L1.\\L1.\\L1.\\L9Really? \\L2" + name +
-                            "? \\L2Do you think I'm stupid? \\L2Enter a name with at least 2 characters.\n");
+                    if (hadShortName == 1)
+                    {
+                        display("`W\\BA\\L1.\\L1.\\L1.\\L9Really? \\L2" + name +
+                                "? \\L2Do you think I'm stupid? \\L2Enter a name with at least 2 characters.\n");
 
+                        hadShortName = 2;
+                        
+                        goto nameInput;
+                    }
+
+                    if (hadShortName == 2)
+                    {
+                        display("`W\\BA\\L1.\\L1.\\L1.\\L9\nJust enter a name with at least 2 characters, really.\n");
+
+                        goto nameInput;
+                    }
+
+                    display("`W\\BAPlease enter a name with at least 2 characters.");
+
+                    hadShortName = 1;
+                    
                     goto nameInput;
                 }
-                else if (name.Length > 10)
+                
+                if (name.Length > 10)
                 {
                     display("`W\\BAThank you, \\L9\n\\L1.\\L1.\\L1.\\L9\n" + name + ".\\L9\nQuite a mouthful.");
                 }
